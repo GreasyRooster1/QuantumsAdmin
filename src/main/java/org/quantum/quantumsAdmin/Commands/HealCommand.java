@@ -3,9 +3,6 @@ package org.quantum.quantumsAdmin.Commands;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
-import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
-import org.quantum.quantumsAdmin.Arguments.PlayerSelector;
 import org.quantum.quantumsAdmin.Util.Command.*;
 import org.quantum.quantumsAdmin.Util.Chat;
 
@@ -14,7 +11,6 @@ import java.util.List;
 public class HealCommand extends EntityCommand {
     public HealCommand() {
         super("heal");
-        arguments = new CommandArgument[]{new PlayerSelector(false)};
         playerOnly = false;
     }
 

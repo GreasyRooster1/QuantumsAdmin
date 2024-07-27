@@ -3,11 +3,10 @@ package org.quantum.quantumsAdmin.Util.Command;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.quantum.quantumsAdmin.Arguments.PlayerSelector;
+import org.quantum.quantumsAdmin.Arguments.EntitySelector;
 import org.quantum.quantumsAdmin.Util.Chat;
 
 import java.util.ArrayList;
@@ -15,10 +14,9 @@ import java.util.Collections;
 import java.util.List;
 
 public abstract class EntityCommand extends BaseCommand {
-    public CommandArgument[] additionalArguments;
     public EntityCommand(String command) {
         super(command);
-        arguments = new CommandArgument[]{new PlayerSelector(false)};
+        arguments = new CommandArgument[]{new EntitySelector(false)};
     }
 
     @Override
@@ -56,13 +54,11 @@ public abstract class EntityCommand extends BaseCommand {
     }
 
     public @Nullable List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        List<CommandArgument> commandArguments = new ArrayList<>(List.of());
-        Collections.addAll(commandArguments, arguments);
-        Collections.addAll(commandArguments, additionalArguments);
-        if(args.length<commandArguments.size()){
+
+        if(args.length<arguments.length){
             return List.of();
         }
-        return commandArguments.get(args.length - 1).onTabComplete(commandSender,command,label,args);
+        return arguments[args.length - 1].onTabComplete(commandSender,command,label,args);
     }
 
     public CommandStatus preAction(CommandSender sender, List<Entity> entities, String[] args) {
