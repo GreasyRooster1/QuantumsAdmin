@@ -1,4 +1,0 @@
-name: QuantumsAdmin
-version: '1.0-SNAPSHOT'
-main: org.quantum.quantumsAdmin.QuantumsAdmin
-api-version: '1.21'
