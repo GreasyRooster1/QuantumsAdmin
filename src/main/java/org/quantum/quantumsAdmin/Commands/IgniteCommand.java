@@ -2,6 +2,7 @@ package org.quantum.quantumsAdmin.Commands;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
+import org.jetbrains.annotations.NotNull;
 import org.quantum.quantumsAdmin.Arguments.EntitySelector;
 import org.quantum.quantumsAdmin.Arguments.IntArgument;
 import org.quantum.quantumsAdmin.Util.Command.CommandArgument;
@@ -25,4 +26,8 @@ public class IgniteCommand extends EntityCommand {
         return CommandStatus.OK;
     }
 
+    @Override
+    public @NotNull String getDescription() {
+        return "Ignites targets";
+    }
 }

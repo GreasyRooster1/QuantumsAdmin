@@ -3,6 +3,7 @@ package org.quantum.quantumsAdmin.Commands;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
+import org.jetbrains.annotations.NotNull;
 import org.quantum.quantumsAdmin.Util.Command.*;
 import org.quantum.quantumsAdmin.Util.Chat;
 
@@ -28,4 +29,8 @@ public class HealCommand extends EntityCommand {
         return CommandStatus.OK;
     }
 
+    @Override
+    public @NotNull String getDescription() {
+        return "Heals targets";
+    }
 }
