@@ -3,6 +3,7 @@ package org.quantum.quantumsAdmin.Arguments;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.quantum.quantumsAdmin.Util.Command.CommandArgument;

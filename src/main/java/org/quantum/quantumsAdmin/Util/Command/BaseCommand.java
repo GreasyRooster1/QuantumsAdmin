@@ -56,9 +56,20 @@ public abstract class BaseCommand extends BukkitCommand implements TabCompleter 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String commandLabel, @NotNull String[] args) {
         if(args.length<minArguments||args.length>arguments.length){
-            sendUsage(sender);
             Chat.sendError(sender,"Invalid number of arguments");
+            sendUsage(sender);
             return true;
+        }
+
+        for(int i=0;i<args.length;i++){
+            if(!arguments[i].required){
+                continue;
+            }
+            if(!arguments[i].isValid(args[i])){
+                Chat.sendError(sender,"Invalid argument(s)");
+                sendUsage(sender);
+                return true;
+            }
         }
 
         if(playerOnly && !(sender instanceof Player)){
