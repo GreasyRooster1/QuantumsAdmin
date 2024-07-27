@@ -1,10 +1,7 @@
 package org.quantum.quantumsAdmin;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import org.quantum.quantumsAdmin.Commands.ExplodeCommand;
-import org.quantum.quantumsAdmin.Commands.HealCommand;
-import org.quantum.quantumsAdmin.Commands.SmiteCommand;
-import org.quantum.quantumsAdmin.Commands.TestCommand;
+import org.quantum.quantumsAdmin.Commands.*;
 
 public final class QuantumsAdmin extends JavaPlugin {
     static QuantumsAdmin plugin;
@@ -22,6 +19,7 @@ public final class QuantumsAdmin extends JavaPlugin {
         new HealCommand().register();
         new ExplodeCommand().register();
         new SmiteCommand().register();
+        new IgniteCommand().register();
     }
 
     @Override
