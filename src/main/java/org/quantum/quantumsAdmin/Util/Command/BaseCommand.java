@@ -62,9 +62,6 @@ public abstract class BaseCommand extends BukkitCommand implements TabCompleter 
         }
 
         for(int i=0;i<args.length;i++){
-            if(!arguments[i].required){
-                continue;
-            }
             if(!arguments[i].isValid(args[i])){
                 Chat.sendError(sender,"Invalid argument(s)");
                 sendUsage(sender);

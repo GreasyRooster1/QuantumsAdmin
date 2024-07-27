@@ -23,12 +23,19 @@ public class EntitySelector extends CommandArgument {
                 return true;
             }
         }
+        if (arg.startsWith("@")) {
+            return true;
+        }
         return false;
     }
 
     @Override
     public List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         List<String> list = new ArrayList<String>();
+        list.add("@a");
+        list.add("@p");
+        list.add("@e");
+        list.add("@r");
         for (Player p : Bukkit.getOnlinePlayers()) {
             list.add(p.getName());
         }
