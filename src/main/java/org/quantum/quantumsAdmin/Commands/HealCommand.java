@@ -28,8 +28,4 @@ public class HealCommand extends EntityCommand {
         return CommandStatus.OK;
     }
 
-    @Override
-    public String getArgumentUsage() {
-        return "";
-    }
 }

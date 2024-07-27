@@ -25,8 +25,4 @@ public class ExplodeCommand extends EntityCommand {
         return CommandStatus.OK;
     }
 
-    @Override
-    public String getArgumentUsage() {
-        return "";
-    }
 }

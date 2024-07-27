@@ -17,8 +17,4 @@ public class SmiteCommand extends EntityCommand {
         return CommandStatus.OK;
     }
 
-    @Override
-    public String getArgumentUsage() {
-        return "";
-    }
 }

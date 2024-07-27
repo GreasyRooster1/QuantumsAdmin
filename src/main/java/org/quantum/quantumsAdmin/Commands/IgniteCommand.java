@@ -25,8 +25,4 @@ public class IgniteCommand extends EntityCommand {
         return CommandStatus.OK;
     }
 
-    @Override
-    public String getArgumentUsage() {
-        return "";
-    }
 }

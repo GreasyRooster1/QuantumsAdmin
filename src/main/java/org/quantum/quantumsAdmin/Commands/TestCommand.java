@@ -17,8 +17,4 @@ public class TestCommand extends BaseCommand {
         return CommandStatus.OK;
     }
 
-    @Override
-    public String getArgumentUsage() {
-        return "";
-    }
 }

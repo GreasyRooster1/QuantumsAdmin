@@ -13,6 +13,7 @@ import java.util.List;
 public class EntitySelector extends CommandArgument {
     public EntitySelector(boolean _required) {
         super(_required);
+        usage = "target";
     }
 
     @Override

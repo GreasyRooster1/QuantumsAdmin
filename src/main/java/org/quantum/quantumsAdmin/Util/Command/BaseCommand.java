@@ -109,10 +109,19 @@ public abstract class BaseCommand extends BukkitCommand implements TabCompleter 
 
     public abstract CommandStatus runCommand(@NotNull CommandSender sender, @NotNull String[] args);
 
-    public abstract String getArgumentUsage();
+    @Override
+    public @Nullable String getPermission() {
+        return QuantumsAdmin.getInstance().getName()+".command."+name;
+    }
 
     public String getUsage(){
-        return "/"+name+" "+getArgumentUsage();
+        String usage = name;
+        for (CommandArgument arg : arguments) {
+            String prefix = arg.required ? "<":"[";
+            String suffix = arg.required ? ">":"]";
+            usage+=" "+prefix+arg.usage+suffix;
+        }
+        return usage;
     }
 
     @Override

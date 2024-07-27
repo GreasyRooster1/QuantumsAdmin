@@ -6,7 +6,6 @@ import org.quantum.quantumsAdmin.Commands.*;
 public final class QuantumsAdmin extends JavaPlugin {
     static QuantumsAdmin plugin;
 
-
     @Override
     public void onEnable() {
         plugin = this;

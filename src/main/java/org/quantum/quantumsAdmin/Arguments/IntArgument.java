@@ -15,6 +15,7 @@ import static org.quantum.quantumsAdmin.Util.Util.isNumeric;
 public class IntArgument extends CommandArgument {
     public IntArgument(boolean _required) {
         super(_required);
+        usage="number";
     }
 
     @Override

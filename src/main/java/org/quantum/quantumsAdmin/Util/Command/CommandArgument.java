@@ -8,6 +8,7 @@ import java.util.List;
 
 public class CommandArgument {
     public boolean required = false;
+    public String usage;
 
     public CommandArgument(boolean _required){
         required = _required;
