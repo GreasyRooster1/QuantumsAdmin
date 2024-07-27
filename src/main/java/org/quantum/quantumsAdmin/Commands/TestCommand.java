@@ -18,7 +18,7 @@ public class TestCommand extends BaseCommand {
     }
 
     @Override
-    public String getUsage() {
-        return "/qatest";
+    public String getArgumentUsage() {
+        return "";
     }
 }

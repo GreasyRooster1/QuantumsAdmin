@@ -7,7 +7,6 @@ import org.bukkit.command.CommandMap;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.SimplePluginManager;
 import org.jetbrains.annotations.NotNull;
 import org.quantum.quantumsAdmin.Util.Chat;
 import org.quantum.quantumsAdmin.Util.CommandStatus;
@@ -101,5 +100,9 @@ public abstract class BaseCommand extends BukkitCommand{
 
     public abstract CommandStatus runCommand(@NotNull CommandSender sender, @NotNull String[] args);
 
-    public abstract String getUsage();
+    public abstract String getArgumentUsage();
+
+    public String getUsage(){
+        return "/"+name+" "+getArgumentUsage();
+    }
 }
