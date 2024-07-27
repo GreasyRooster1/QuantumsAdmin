@@ -3,9 +3,9 @@ package org.quantum.quantumsAdmin.Commands;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import org.quantum.quantumsAdmin.BaseCommand;
+import org.quantum.quantumsAdmin.Util.Command.BaseCommand;
 import org.quantum.quantumsAdmin.Util.Chat;
-import org.quantum.quantumsAdmin.Util.CommandStatus;
+import org.quantum.quantumsAdmin.Util.Command.CommandStatus;
 
 public class HealCommand extends BaseCommand {
     public HealCommand() {

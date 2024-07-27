@@ -1,4 +1,4 @@
-package org.quantum.quantumsAdmin.Util;
+package org.quantum.quantumsAdmin.Util.Command;
 
 public enum CommandStatus {
     OK,

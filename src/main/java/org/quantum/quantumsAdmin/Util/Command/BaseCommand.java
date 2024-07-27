@@ -1,21 +1,18 @@
-package org.quantum.quantumsAdmin;
+package org.quantum.quantumsAdmin.Util.Command;
 
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandMap;
-import org.bukkit.command.CommandSender;
+import org.bukkit.command.*;
 import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.quantum.quantumsAdmin.QuantumsAdmin;
 import org.quantum.quantumsAdmin.Util.Chat;
-import org.quantum.quantumsAdmin.Util.CommandStatus;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseCommand extends BukkitCommand{
+public abstract class BaseCommand extends BukkitCommand implements TabCompleter {
     public String name;
 
     public int minArguments = 0;
@@ -104,5 +101,14 @@ public abstract class BaseCommand extends BukkitCommand{
 
     public String getUsage(){
         return "/"+name+" "+getArgumentUsage();
+    }
+
+    @Override
+    public @Nullable List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
+        List<String> list = new ArrayList<String>();
+        for (Player p : Bukkit.getOnlinePlayers()) {
+            list.add(p.getName());
+        }
+        return list;
     }
 }
