@@ -50,7 +50,7 @@ public abstract class BaseCommand extends BukkitCommand implements TabCompleter 
     }
 
     public void sendUsage(CommandSender sender){
-        Chat.send(sender,"Usage: "+getUsage());
+        Chat.send(sender,"<gold><bold>Usage: </bold></gold><white>"+getUsage()+"</white>");
     }
 
     @Override
