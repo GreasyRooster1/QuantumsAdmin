@@ -13,7 +13,7 @@ public class TestCommand extends BaseCommand {
 
     @Override
     public CommandStatus runCommand(@NotNull CommandSender sender, @NotNull String[] args) {
-        Chat.sendSuccess(sender,"Command system functioning normally!");
+        Chat.sendSuccess(sender,"Plugin appears to be loaded!");
         return CommandStatus.OK;
     }
 
