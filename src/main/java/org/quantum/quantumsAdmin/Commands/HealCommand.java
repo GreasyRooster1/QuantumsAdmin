@@ -15,6 +15,7 @@ public class HealCommand extends EntityCommand {
     public HealCommand() {
         super("heal");
         arguments = new CommandArgument[]{new PlayerSelector(false)};
+        playerOnly = false;
     }
 
     @Override

@@ -25,7 +25,12 @@ public abstract class EntityCommand extends BaseCommand {
     public CommandStatus runCommand(@NotNull CommandSender sender, @NotNull String[] args) {
         ArrayList<Entity> entities = new ArrayList<>();
         if(args.length<1){
-            entities.add((Player)sender);
+            if(playerOnly) {
+                entities.add((Player) sender);
+            }else{
+                Chat.sendError(sender,"Please specify a target");
+                return CommandStatus.ERROR;
+            }
         }else{
             Entity[] utilResult = CommandUtils.getTargets(sender,args[0]);
             if(utilResult==null){
