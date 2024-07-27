@@ -106,7 +106,7 @@ public abstract class BaseCommand extends BukkitCommand implements TabCompleter 
 
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if(arguments.length<args.length){
+        if(args.length<arguments.length){
             return List.of();
         }
         return arguments[args.length-1].onTabComplete(commandSender,command,label,args);
