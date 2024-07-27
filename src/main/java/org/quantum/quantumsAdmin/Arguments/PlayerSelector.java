@@ -10,10 +10,10 @@ import org.quantum.quantumsAdmin.Util.Command.CommandArgument;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EntitySelector extends CommandArgument {
-    public EntitySelector(boolean _required) {
+public class PlayerSelector extends CommandArgument {
+    public PlayerSelector(boolean _required) {
         super(_required);
-        usage = "target";
+        usage = "player";
     }
 
     @Override
@@ -23,7 +23,7 @@ public class EntitySelector extends CommandArgument {
                 return true;
             }
         }
-        if (arg.startsWith("@")) {
+        if (arg.startsWith("@")&&!arg.startsWith("@e")) {
             return true;
         }
         return false;
@@ -35,7 +35,6 @@ public class EntitySelector extends CommandArgument {
         list.add("@s");
         list.add("@a");
         list.add("@p");
-        list.add("@e");
         list.add("@r");
         for (Player p : Bukkit.getOnlinePlayers()) {
             list.add(p.getName());
