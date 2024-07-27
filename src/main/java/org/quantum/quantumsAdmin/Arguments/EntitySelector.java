@@ -3,7 +3,6 @@ package org.quantum.quantumsAdmin.Arguments;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.quantum.quantumsAdmin.Util.Command.CommandArgument;
@@ -11,8 +10,8 @@ import org.quantum.quantumsAdmin.Util.Command.CommandArgument;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlayerSelector extends CommandArgument {
-    public PlayerSelector(boolean _required) {
+public class EntitySelector extends CommandArgument {
+    public EntitySelector(boolean _required) {
         super(_required);
     }
 
