@@ -5,9 +5,12 @@ import org.bukkit.entity.Entity;
 import org.jetbrains.annotations.NotNull;
 import org.quantum.quantumsAdmin.Arguments.EntitySelector;
 import org.quantum.quantumsAdmin.Arguments.IntArgument;
+import org.quantum.quantumsAdmin.Util.Chat;
 import org.quantum.quantumsAdmin.Util.Command.CommandArgument;
 import org.quantum.quantumsAdmin.Util.Command.CommandStatus;
 import org.quantum.quantumsAdmin.Util.Command.EntityCommand;
+
+import java.util.List;
 
 public class ExplodeCommand extends EntityCommand {
     public ExplodeCommand() {
@@ -23,6 +26,12 @@ public class ExplodeCommand extends EntityCommand {
             power = (float)Integer.parseInt(args[1]);
         }
         e.getWorld().createExplosion(e.getLocation(),power);
+        return CommandStatus.OK;
+    }
+
+    @Override
+    public CommandStatus postAction(CommandSender sender, List<Entity> entities, String[] args) {
+        Chat.sendSuccess(sender,"Exploded "+entities.size()+" targets");
         return CommandStatus.OK;
     }
 
