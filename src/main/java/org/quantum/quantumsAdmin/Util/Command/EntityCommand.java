@@ -23,7 +23,7 @@ public abstract class EntityCommand extends BaseCommand {
     public CommandStatus runCommand(@NotNull CommandSender sender, @NotNull String[] args) {
         ArrayList<Entity> entities = new ArrayList<>();
         if(args.length<1){
-            if(playerOnly) {
+            if(sender instanceof Player) {
                 entities.add((Player) sender);
             }else{
                 Chat.sendError(sender,"Please specify a target");
