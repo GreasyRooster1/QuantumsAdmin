@@ -16,7 +16,7 @@ public abstract class BaseCommand extends BukkitCommand implements TabCompleter 
     public String name;
 
     public int minArguments = 0;
-    public int maxArguments = 0;
+    public CommandArgument[] arguments = {};
 
     public boolean playerOnly = true;
     public boolean isOp = true;
@@ -55,7 +55,7 @@ public abstract class BaseCommand extends BukkitCommand implements TabCompleter 
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String commandLabel, @NotNull String[] args) {
-        if(args.length<minArguments||(args.length<maxArguments && maxArguments==-1)){
+        if(args.length>minArguments||args.length<arguments.length){
             sendUsage(sender);
             return true;
         }
@@ -104,11 +104,7 @@ public abstract class BaseCommand extends BukkitCommand implements TabCompleter 
     }
 
     @Override
-    public @Nullable List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
-        List<String> list = new ArrayList<String>();
-        for (Player p : Bukkit.getOnlinePlayers()) {
-            list.add(p.getName());
-        }
-        return list;
+    public @Nullable List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+        return arguments[args.length].onTabComplete(commandSender,command,label,args);
     }
 }

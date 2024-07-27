@@ -7,6 +7,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class CommandArgument {
+    public boolean required = false;
+
+    public CommandArgument(boolean _required){
+        required = _required;
+    }
+
     public boolean isValid(String arg){
         return false;
     }

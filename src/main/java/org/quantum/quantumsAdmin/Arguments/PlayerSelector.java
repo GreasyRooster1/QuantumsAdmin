@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlayerSelector extends CommandArgument {
+    public PlayerSelector(boolean _required) {
+        super(_required);
+    }
+
     @Override
     public boolean isValid(String arg) {
         for (Player p : Bukkit.getOnlinePlayers()) {
