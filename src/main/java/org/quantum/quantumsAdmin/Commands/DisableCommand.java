@@ -53,7 +53,7 @@ public class DisableCommand extends BaseCommand {
                     Chat.sendError(sender, "You must be a player to use this command!");
                     return CommandStatus.OK;
                 }
-                String item = ((Player)sender).getInventory().getItemInMainHand().getType().name();
+                String item = ((Player)sender).getInventory().getItemInMainHand().getType().name().toLowerCase();
                 disabledItems.add(item);
                 Chat.sendSuccess(sender,"Added <light_purple>"+item+"</light_purple> to disabled items!");
             }
