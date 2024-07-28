@@ -10,6 +10,9 @@ public class DisableItems {
     public static ArrayList<String> disabledItems = new ArrayList<String>();
 
     public static void checkDisabledItems(Player player, ItemStack item, PlayerInteractEvent event) {
+        if(player.isOp()){
+            return;
+        }
         if (disabledItems.contains(item.getType().name().toLowerCase())) {
             event.setCancelled(true);
         }
