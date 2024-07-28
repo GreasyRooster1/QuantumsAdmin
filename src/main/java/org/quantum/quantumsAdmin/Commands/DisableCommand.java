@@ -2,6 +2,7 @@ package org.quantum.quantumsAdmin.Commands;
 
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.quantum.quantumsAdmin.Arguments.ChoiceArgument;
 import org.quantum.quantumsAdmin.Arguments.ItemTypeArgument;
@@ -24,6 +25,7 @@ public class DisableCommand extends BaseCommand {
         choices.add("add");
         choices.add("remove");
         choices.add("view");
+        choices.add("hand");
 
         arguments = new CommandArgument[]{
                 new ChoiceArgument(true).setChoices(choices),
@@ -46,6 +48,15 @@ public class DisableCommand extends BaseCommand {
                 }
             }
         }else{
+            if (args[0].equalsIgnoreCase("hand")) {
+                if(!(sender instanceof Player)) {
+                    Chat.sendError(sender, "You must be a player to use this command!");
+                    return CommandStatus.OK;
+                }
+                String item = ((Player)sender).getInventory().getItemInMainHand().getType().name();
+                disabledItems.add(item);
+                Chat.sendSuccess(sender,"Added <light_purple>"+item+"</light_purple> to disabled items!");
+            }
             if (args[0].equalsIgnoreCase("view")) {
                 String out = "<green>Items currently disabled:</green>\n";
                 for (String item : disabledItems) {
