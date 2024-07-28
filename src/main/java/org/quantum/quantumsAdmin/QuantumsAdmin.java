@@ -30,6 +30,7 @@ public final class QuantumsAdmin extends JavaPlugin {
         new IgniteCommand().register();
         new FlyCommand().register();
         new MultiSpawn().register();
+        new DisableCommand().register();
     }
 
     @Override
