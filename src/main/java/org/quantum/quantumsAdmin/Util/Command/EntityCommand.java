@@ -54,11 +54,7 @@ public abstract class EntityCommand extends BaseCommand {
     }
 
     public @Nullable List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-
-        if(args.length<arguments.length){
-            return List.of();
-        }
-        return arguments[args.length - 1].onTabComplete(commandSender,command,label,args);
+        return super.onTabComplete(commandSender,command,label,args);
     }
 
     public CommandStatus preAction(CommandSender sender, List<Entity> entities, String[] args) {
