@@ -39,6 +39,6 @@ public class MultiSpawn extends BaseCommand {
 
     @Override
     public @NotNull String getDescription() {
-        return "Test command";
+        return "Spawn multiple mobs";
     }
 }
