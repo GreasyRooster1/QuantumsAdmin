@@ -28,9 +28,6 @@ public class FlyCommand extends EntityCommand {
     public CommandStatus preformAction(CommandSender sender, Entity e, String[] args) {
         if(e instanceof Player) {
             Player player = (Player) e;
-            if(player.getGameMode()== GameMode.CREATIVE){
-                return CommandStatus.OK;
-            }
             if(args.length == 2) {
                 player.setAllowFlight(args[1].equalsIgnoreCase("on"));
             }else{
