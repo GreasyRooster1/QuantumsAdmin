@@ -1,6 +1,7 @@
 package org.quantum.quantumsAdmin.Util;
 
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
 import java.util.Random;
@@ -43,4 +44,13 @@ public class Util {
         }
         return target;
     }
+
+    public static Player getTargetPlayer(final Player player) {
+        return getTarget(player, player.getWorld().getPlayers());
+    }
+
+    public static Entity getTargetEntity(final Entity entity) {
+        return getTarget(entity, entity.getWorld().getEntities());
+    }
 }
+

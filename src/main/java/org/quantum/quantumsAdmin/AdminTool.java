@@ -6,6 +6,8 @@ import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -15,10 +17,15 @@ import java.util.ArrayList;
 import static net.kyori.adventure.text.Component.text;
 
 public abstract class AdminTool{
-    public abstract ItemStack createItem(ItemStack base);
     public abstract String getName();
     public abstract int getId();
     public abstract Material getItemMaterial();
+
+    public abstract void onRightClick(Player player, PlayerInteractEvent event);
+
+    public ItemStack createItem(ItemStack base){
+        return base;
+    }
 
     public ItemStack getItem(){
         return createItem(getBaseItem());
@@ -38,6 +45,6 @@ public abstract class AdminTool{
     }
 
     private Component toolText(String name){
-        return MiniMessage.miniMessage().deserialize("<black><obfuscated>DJW</obfuscated></black><light_purple>"+name+"</light_purple><black><obfuscated>DJW</obfuscated></black>").asComponent();
+        return MiniMessage.miniMessage().deserialize("<dark_blue><bold><obfuscated>DW</obfuscated></bold></dark_blue> <blue>"+name+"</blue> <dark_blue><bold><obfuscated>DW</obfuscated></bold></dark_blue>").asComponent();
     }
 }

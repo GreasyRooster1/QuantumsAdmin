@@ -8,14 +8,13 @@ import org.bukkit.inventory.InventoryHolder;
 import org.jetbrains.annotations.NotNull;
 import org.quantum.quantumsAdmin.AdminTool;
 import org.quantum.quantumsAdmin.AdminTools.AdminSword;
-import org.quantum.quantumsAdmin.Util.Chat;
 import org.quantum.quantumsAdmin.Util.Command.BaseCommand;
 import org.quantum.quantumsAdmin.Util.Command.CommandStatus;
 
 import java.util.List;
 
 public class ToolsCommand extends BaseCommand {
-    public List<AdminTool> tools = List.of(
+    public static List<AdminTool> adminTools = List.of(
             new AdminSword()
     );
 
@@ -28,8 +27,8 @@ public class ToolsCommand extends BaseCommand {
     public CommandStatus runCommand(@NotNull CommandSender sender, @NotNull String[] args) {
         Inventory inventory = Bukkit.createInventory((InventoryHolder) sender,45);
 
-        for (int i=0;i<tools.size();i++) {
-            AdminTool tool = tools.get(i);
+        for (int i = 0; i< adminTools.size(); i++) {
+            AdminTool tool = adminTools.get(i);
             inventory.setItem(getSlot(i),tool.getItem());
         }
 

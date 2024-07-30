@@ -7,6 +7,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
+import static org.quantum.quantumsAdmin.Events.AdminToolEvents.checkAdminTools;
 import static org.quantum.quantumsAdmin.Events.DisableItems.checkDisabledItems;
 import static org.quantum.quantumsAdmin.Events.DisableItems.disabledItems;
 
@@ -21,6 +22,7 @@ public class PlayerEvents implements Listener {
         if (action.equals(Action.RIGHT_CLICK_AIR) || action.equals(Action.RIGHT_CLICK_BLOCK)) {
             if (item != null) {
                 checkDisabledItems(player,item,event);
+                checkAdminTools(player,item,event);
             }
         }
     }
