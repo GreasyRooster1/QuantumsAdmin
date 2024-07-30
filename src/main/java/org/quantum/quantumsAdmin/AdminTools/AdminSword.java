@@ -35,7 +35,7 @@ public class AdminSword extends AdminTool {
             return;
         }
         if(target instanceof LivingEntity) {
-            ((LivingEntity) target).damage(Double.MAX_VALUE,player);
+            ((LivingEntity) target).damage(99999,player);
         }else{
             target.remove();
         }
