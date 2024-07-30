@@ -32,7 +32,7 @@ public class AdminPickaxe extends AdminTool {
 
     @Override
     public int getId() {
-        return 1;
+        return 2;
     }
 
     @Override
