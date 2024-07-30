@@ -7,6 +7,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.jetbrains.annotations.NotNull;
 import org.quantum.quantumsAdmin.AdminTool;
+import org.quantum.quantumsAdmin.AdminTools.AdminPickaxe;
 import org.quantum.quantumsAdmin.AdminTools.AdminSword;
 import org.quantum.quantumsAdmin.Util.Command.BaseCommand;
 import org.quantum.quantumsAdmin.Util.Command.CommandStatus;
@@ -15,7 +16,8 @@ import java.util.List;
 
 public class ToolsCommand extends BaseCommand {
     public static List<AdminTool> adminTools = List.of(
-            new AdminSword()
+            new AdminSword(),
+            new AdminPickaxe()
     );
 
     public ToolsCommand() {
