@@ -27,7 +27,7 @@ public class AdminPickaxe extends AdminTool {
 
     @Override
     public String getName() {
-        return "Admin Sword";
+        return "Admin Pickaxe";
     }
 
     @Override
