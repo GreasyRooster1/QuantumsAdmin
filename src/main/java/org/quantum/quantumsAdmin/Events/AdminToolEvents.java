@@ -15,6 +15,9 @@ public class AdminToolEvents {
         if(!player.isOp()){
             return;
         }
+        if(!item.getItemMeta().hasDisplayName()){
+            return;
+        }
         for(AdminTool tool : adminTools){
             if(item.getItemMeta().getCustomModelData()==tool.getId()){
                 tool.onRightClick(player,event);
