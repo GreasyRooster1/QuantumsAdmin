@@ -37,7 +37,7 @@ public class AdminPickaxe extends AdminTool {
 
     @Override
     public Material getItemMaterial() {
-        return Material.STONE_SWORD;
+        return Material.STONE_PICKAXE;
     }
 
     @Override
