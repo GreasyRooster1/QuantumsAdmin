@@ -44,30 +44,12 @@ public class AdminPickaxe extends AdminTool {
     public void onRightClick(Player player, PlayerInteractEvent event) {
         Block target = player.getTargetBlock(null,10);
         target.breakNaturally(true);
-//        float dir = player.getYaw();
-//        boolean isZ = (dir>-45&&dir<45) || (dir>135 || dir<-135);
-
-//        if(player.getPitch()>-45&&player.getPitch()<45){
-//            for (int i = -1; i <= 1; i++) {
-//                for (int j = -1; j <= 1; j++) {
-//                    player.getWorld().setBlockData(target.getLocation().add(i,j,0),Material.AIR.createBlockData());
-//                }
-//            }
-//            return;
-//        }
-//
-//        if(isZ){
-//            for (int i = -1; i <= 1; i++) {
-//                for (int j = -1; j <= 1; j++) {
-//                    player.getWorld().setBlockData(target.getLocation().add(i,0,j),Material.AIR.createBlockData());
-//                }
-//            }
-//        }else{
-//            for (int i = -1; i <= 1; i++) {
-//                for (int j = -1; j <= 1; j++) {
-//                    player.getWorld().setBlockData(target.getLocation().add(0,i,j),Material.AIR.createBlockData());
-//                }
-//            }
-//        }
+        for (int x = -1; x <= 1; x++) {
+            for (int y = -1; y <= 1; y++) {
+                for (int z = -1; z <= 1; z++) {
+                    player.getWorld().getBlockAt(target.getLocation().add(x, y, z)).breakNaturally(true);
+                }
+            }
+        }
     }
 }

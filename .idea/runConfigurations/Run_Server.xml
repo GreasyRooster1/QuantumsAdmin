@@ -1,9 +1,10 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Run Server" type="JarApplication">
-    <option name="JAR_PATH" value="$PROJECT_DIR$/run/paper-1.21-109.jar" />
+    <option name="JAR_PATH" value="$PROJECT_DIR$/run/paper-1.21-123.jar" />
     <option name="PROGRAM_PARAMETERS" value="-nogui" />
-    <option name="WORKING_DIRECTORY" value="C:\Users\dillo\IdeaProjects\QuantumsAdmin\run" />
-    <option name="ALTERNATIVE_JRE_PATH" />
+    <option name="WORKING_DIRECTORY" value="C:\Users\QuantumDeity\Desktop\Coding\Projects\Java\QuantumsAdmin\run" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
     <method v="2">
       <option name="RunConfigurationTask" enabled="true" run_configuration_name="Move Build" run_configuration_type="ShConfigurationType" />
     </method>
