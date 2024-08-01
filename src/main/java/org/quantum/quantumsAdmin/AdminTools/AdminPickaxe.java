@@ -42,7 +42,7 @@ public class AdminPickaxe extends AdminTool {
 
     @Override
     public void onRightClick(Player player, PlayerInteractEvent event) {
-        Block target = player.getTargetBlock(null,10);
+        Block target = player.getTargetBlock(null,50);
         target.breakNaturally(true);
         for (int x = -1; x <= 1; x++) {
             for (int y = -1; y <= 1; y++) {
