@@ -1,6 +1,7 @@
 package org.quantum.quantumsAdmin;
 
 import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.quantum.quantumsAdmin.Commands.*;
@@ -13,8 +14,16 @@ public final class QuantumsAdmin extends JavaPlugin {
     public void onEnable() {
         plugin = this;
 
+        disablePvp();
+
         registerCommands();
         registerEvents();
+    }
+
+    public void disablePvp(){
+        for(World w : Bukkit.getWorlds()){
+            w.setPVP(false);
+        }
     }
 
     public void registerEvents() {
@@ -32,6 +41,7 @@ public final class QuantumsAdmin extends JavaPlugin {
         new MultiSpawn().register();
         new DisableCommand().register();
         new ToolsCommand().register();
+        new PVPCommand().register();
     }
 
     @Override
