@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 import org.quantum.quantumsAdmin.AdminTool;
 import org.quantum.quantumsAdmin.AdminTools.AdminPickaxe;
 import org.quantum.quantumsAdmin.AdminTools.AdminSword;
+import org.quantum.quantumsAdmin.AdminTools.FireballWand;
+import org.quantum.quantumsAdmin.AdminTools.LightningWand;
 import org.quantum.quantumsAdmin.Util.Command.BaseCommand;
 import org.quantum.quantumsAdmin.Util.Command.CommandStatus;
 
@@ -17,7 +19,9 @@ import java.util.List;
 public class ToolsCommand extends BaseCommand {
     public static List<AdminTool> adminTools = List.of(
             new AdminSword(),
-            new AdminPickaxe()
+            new AdminPickaxe(),
+            new FireballWand(),
+            new LightningWand()
     );
 
     public ToolsCommand() {
