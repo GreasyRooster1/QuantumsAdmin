@@ -22,6 +22,8 @@ public class AdminSword extends AdminTool {
     public ItemStack createItem(ItemStack base) {
         ItemMeta meta = base.getItemMeta();
         meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE,new AttributeModifier(NamespacedKey.fromString("quantumsadmin:attack"),9999999,AttributeModifier.Operation.MULTIPLY_SCALAR_1));
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED,new AttributeModifier(NamespacedKey.fromString("quantumsadmin:attack"),9999999,AttributeModifier.Operation.MULTIPLY_SCALAR_1));
+
         base.setItemMeta(meta);
         return base;
     }
